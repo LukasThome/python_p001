@@ -1,11 +1,11 @@
-p1 = float(input("Nota da P1: "))
-p2 = float(input("Nota da P2: "))
-p3 = float(input("Nota da P3: "))
+nSequencia = int(input())
+soma = 0
+n = 0
+while n < nSequencia:
+    value = float(input())
 
+    soma = value + soma
+    n = n + 1
 
-
-media = (p1*2 + p2*3 + p3*5) / 10
-
-
-
-print("A media final do aluno eh:", "%.1f" % media)
+media = soma/nSequencia
+print(media)

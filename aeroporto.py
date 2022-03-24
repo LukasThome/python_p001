@@ -1,55 +1,33 @@
+t = 1
+while True:
+    aero = input().split()
 
+    #se for 0 
+    if aero == ['0', '0']:
+        break
+    else:
+        voos = []
+        maior = {'voos' : [], 'vezes' : 0}
 
+        #add tds os voos
+        for _ in range(int(aero[1])):
+            for v in input().split(' '):
+                voos.append(int(v))
 
-aeroporto = []
-maior = 0 
-num = 0
-num2 = 0
-entrada = True
-n = 0
+        #acho o maior
+        for v in range(1, int(aero[0])) + 1)):
+            vezes = voos.count(v)
+            if vezes > maior['vezes']:
+                maior['voos'] = [v]
+                maior['vezes'] = vezes
+            elif vezes == maior['vezes']:
+                maior['voos'].append(v)
 
-
-
-
-#Lendo os valores de A e V - aeroportos e voos
-a,v = [int(x) for x in input().split()]  
-
-while (entrada):
-    
-   #verificando os valores para interromper o loop quando a e v == 0
-    if a and v == 0:
-        entrada = False
-        continue
-    
-    
-    
-    
-    #lendo os valores de x e y, numero do aeroporto e voos
-    for i in range(v):
-        x = [int(x) for x in input().split()]
-        aeroporto.append(x)
-        print(aeroporto)
-       
-
-
-    n += 1   
-    
-    print("Teste ", n)
-    
-    
-    
-    #encontrando o aeroporto com mais incidencias
-    for i in aeroporto:
-        c= aeroporto.count(i)
-        #d = aeroporto.count(i)
-        #print(c)
-        if c >= maior:
-            maior = c
-            num = i
-
-    #se existirem dois aeroportos com o mesmo numero de voos ele deve apresentar os dois
-    print(num)
-    print()
-    
-    a,v = [int(x) for x in input().split()] 
-    
+        #print resultado        
+        print(f'Teste {t}')
+        maior['voos'].sort()
+        for a in maior['voos']:
+            print(a, end= ' ')
+        print()
+        print()
+        t += 1
